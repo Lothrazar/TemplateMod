@@ -3,6 +3,7 @@ import com.lothrazar.examplemod.setup.ClientProxy;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
 import net.minecraft.block.Block;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -13,6 +14,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("examplemod")
@@ -35,6 +37,8 @@ public class ExampleMod
     {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
+        TileEntity bob;
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
