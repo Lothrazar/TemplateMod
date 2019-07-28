@@ -1,5 +1,6 @@
 package com.lothrazar.examplemod;
 import com.lothrazar.examplemod.setup.ClientProxy;
+import com.lothrazar.examplemod.setup.ConfigHandler;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
 import net.minecraft.block.Block;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +24,7 @@ public class ExampleMod
 {
 
     public static final IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
+    public static final String MODID = "examplemod" ;
     private static final Logger LOGGER = LogManager.getLogger();
 
     public ExampleMod() {
@@ -30,7 +33,8 @@ public class ExampleMod
 
 
         //only for server starting
-        MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(this);;
+        ConfigHandler.loadConfig(ConfigHandler.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MODID + ".toml"));
     }
 
     private void setup(final FMLCommonSetupEvent event)
