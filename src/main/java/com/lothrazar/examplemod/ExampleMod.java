@@ -4,7 +4,6 @@ import com.lothrazar.examplemod.setup.ConfigHandler;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
@@ -34,7 +33,7 @@ public class ExampleMod {
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     //only for server starting
     MinecraftForge.EVENT_BUS.register(this);
-    ;
+
     ConfigHandler.loadConfig(ConfigHandler.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MODID + ".toml"));
   }
 
