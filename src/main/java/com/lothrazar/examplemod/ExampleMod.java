@@ -4,10 +4,13 @@ import com.lothrazar.examplemod.setup.ConfigHandler;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
 import net.minecraft.block.Block;
+import net.minecraft.entity.monster.WitherSkeletonEntity;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -41,8 +44,17 @@ public class ExampleMod {
     // some preinit code
     LOGGER.info("HELLO FROM PREINIT");
     TileEntity bob;
+//    LivingEvent.LivingUpdateEvent x;
   }
 
+  @SubscribeEvent
+  public void onupdate(    LivingEvent.LivingUpdateEvent event){
+    //
+    if(event.getEntity() instanceof WitherSkeletonEntity){
+
+
+    }
+  }
   // You can use SubscribeEvent and let the Event Bus discover methods to call
   @SubscribeEvent
   public void onServerStarting(FMLServerStartingEvent event) {
