@@ -53,13 +53,14 @@ public class ExampleMod {
     @SubscribeEvent
     public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
       // register a new block here
-      //      event.getRegistry().register(new BlockRequest());
+      //      event.getRegistry().register(___);
     }
 
     @SubscribeEvent
     public static void onItemsRegistry(RegistryEvent.Register<Item> event) {
-      //      Item.Properties properties = new Item.Properties().group(SsnRegistry.itemGroup);
-      //      event.getRegistry().register(new BlockItem(SsnRegistry.master, properties).setRegistryName("master"));
+      //      Item.Properties properties = new Item.Properties().group(___);// tab group
+      // create a static registry using static variables annoated with  net.minecraftforge.registries.ObjectHolder
+      //      event.getRegistry().register(new BlockItem(ExampleModRegistry.___, properties).setRegistryName("___")); 
     }
   }
 
