@@ -13,7 +13,7 @@ dest=$1
 echo "copying to folder ../${dest}"
 
 declare -a arr=("dist.bat" "gradle" "src" "build.gradle" ".gitignore" ".github" 
-"gradle.properties" "gradlew" "gradlew.bat" "refresh.bat")
+"gradle.properties" "gradlew" "gradlew.bat" "refresh.bat" "update.json")
 
 # copy each file/folder
 
@@ -23,6 +23,7 @@ do
 	cp -r "${file}" "../${dest}/${file}"
 done
 
+cp -r "options.txt" "../${dest}/options.txt"
 
 
 echo "files written"
