@@ -12,7 +12,7 @@ dest=$1
 
 echo "copying to folder ../${dest}"
 
-declare -a arr=("dist.bat" "README.md" "gradle" "src" "build.gradle" ".gitignore" 
+declare -a arr=("dist.bat" "gradle" "src" "build.gradle" ".gitignore" ".github" 
 "gradle.properties" "gradlew" "gradlew.bat" "refresh.bat")
 
 # copy each file/folder
