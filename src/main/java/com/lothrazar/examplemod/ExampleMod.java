@@ -3,7 +3,6 @@ package com.lothrazar.examplemod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.lothrazar.examplemod.setup.ClientProxy;
-import com.lothrazar.examplemod.setup.ConfigHandler;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
 import net.minecraft.block.Block;
@@ -19,25 +18,28 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
 
-// The value here should match an entry in the META-INF/mods.toml file
+// TODO: The value here should match an entry in the META-INF/mods.toml file
+// TODO: Also search and replace it in build.gradle
 @Mod(ExampleMod.MODID)
 public class ExampleMod {
 
+  public static final String MODID = "examplemod";
   public static final String certificateFingerprint = "@FINGERPRINT@";
   public static final IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
-  public static final String MODID = "examplemod";
   public static final Logger LOGGER = LogManager.getLogger();
+  public static ConfigManager config;
 
   public ExampleMod() {
     // Register the setup method for modloading
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     //only for server starting
     MinecraftForge.EVENT_BUS.register(this);
-    ConfigHandler.loadConfig(ConfigHandler.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MODID + ".toml"));
+    config = new ConfigManager(FMLPaths.CONFIGDIR.get().resolve(MODID + ".toml"));
   }
 
   private void setup(final FMLCommonSetupEvent event) {
     //now all blocks/items exist
+    config.tooltips();//config values used like this
   }
 
   @SubscribeEvent
