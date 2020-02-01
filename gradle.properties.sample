@@ -1,0 +1,10 @@
+# a secret properties file for your root gradle for jar signing
+
+keyStore=C:\\Users\\YOURFOLDER\\.gradle\\keystore.jks
+keyStoreAlias=ALIAS
+keyStorePass=PASS
+keyStoreKeyPass=PASS
+signSHA1=HASHLOWERCASENOSYMBOLS
+
+
+deleteMe=https://darkhax.net/2017/10/jar-signing
