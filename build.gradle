@@ -13,6 +13,10 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
+import net.minecraftforge.gradle.common.task.SignJar
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
 version = "${mc_version}-${mod_version}"
 group = 'com.lothrazar.examplemod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'examplemod'
@@ -94,8 +98,9 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
 
- // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
- // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+    compile fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+    compile fg.deobf("top.theillusivec4.curios:curios:FORGE-${mc_version}-${curios_version}")
+    
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"
@@ -125,6 +130,12 @@ repositories {
     // location of a maven mirror for JEI files, as a fallback
     name = "ModMaven"
     url = "https://modmaven.k-4u.nl"
+  }
+  maven {
+    url = "https://maven.theillusivec4.top/"
+  }
+  maven {
+    url 'http://maven.mcmoddev.com'
   }
 }
 
@@ -164,3 +175,31 @@ publishing {
         }
     }
 }
+
+
+
+task signJar(type: SignJar, dependsOn: jar) {
+
+    // Skips if the keyStore property is missing.
+    //onlyIf {
+      //  project.hasProperty('keyStore')
+    //}
+ 
+	if (project.hasProperty('keyStore')) {
+	
+	    project.logger.lifecycle('!Signing jar ' + jar.archivePath.getName());
+	    // findProperty allows us to reference the property without it existing. 
+	    // Using project.propName would cause the script to fail validation if 
+	    // the property did not exist. 
+	    keyStore = project.findProperty('keyStore')
+	    alias = project.findProperty('keyStoreAlias')
+	    storePass = project.findProperty('keyStorePass')
+	    keyPass = project.findProperty('keyStoreKeyPass')
+	    inputFile = jar.archivePath
+	    outputFile = jar.archivePath
+    } else {
+	   project.logger.lifecycle('Could not sign ' + jar.archivePath.getName() + '. No keyStore property could be found')
+	}
+}
+
+build.dependsOn signJar
