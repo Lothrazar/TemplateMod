@@ -25,5 +25,17 @@ done
 
 cp -r "options.txt" "../${dest}/options.txt"
 
+mkdir "../${dest}/src/main/resources/assets/${dest}/blockstates"
+mkdir "../${dest}/src/main/resources/assets/${dest}/lang"
+mkdir "../${dest}/src/main/resources/assets/${dest}/models/block"
+mkdir "../${dest}/src/main/resources/assets/${dest}/models/item"
+mkdir "../${dest}/src/main/resources/assets/${dest}/textures"
+mkdir "../${dest}/src/main/resources/assets/${dest}/textures/block"
+mkdir "../${dest}/src/main/resources/assets/${dest}/textures/item"
+
+mkdir "../${dest}/src/main/resources/data/${dest}/recipes"
+mkdir "../${dest}/src/main/resources/data/${dest}/loot_tables/blocks"
+
+touch "../${dest}/src/main/resources/assets/${dest}/lang/en_us.json"
 
 echo "files written"
