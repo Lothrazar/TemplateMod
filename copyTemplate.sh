@@ -39,3 +39,5 @@ mkdir "../${dest}/src/main/resources/data/${dest}/loot_tables/blocks"
 touch "../${dest}/src/main/resources/assets/${dest}/lang/en_us.json"
 
 echo "files written"
+
+./setup.sh
