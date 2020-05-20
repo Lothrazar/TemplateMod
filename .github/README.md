@@ -1,7 +1,12 @@
+A Forge mod for Minecraft Java
 
-- some baseline classes for new mod setup
+- Download a Forge MDK from [https://files.minecraftforge.net/](https://files.minecraftforge.net)
 
-- Download a Forge MDK from [http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.14.4.html](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.14.4.html)
- 
+- Clone this repository and add the files into the unzipped MDK folder
 
-[![](http://cf.way2muchnoise.eu/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSE-LINK) [![](http://cf.way2muchnoise.eu/versions/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSE-LINK)
+- run ./setup.sh
+
+- Open as a Gradle project in Eclipse (or your favorite Java IDE)
+
+[![](http://cf.way2muchnoise.eu/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK) 
+[![](http://cf.way2muchnoise.eu/versions/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK)
