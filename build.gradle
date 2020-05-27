@@ -192,10 +192,8 @@ task signJar(type: SignJar, dependsOn: jar) {
 build.dependsOn signJar
 
 task copyJar(type: Copy) {
-    from "build/libs/examplemod-1.15.2-0.0.0.jar"
-    into "c:/tmp"
+    from jar
+    into "${dist_folder}"
 }
 
 build.finalizedBy copyJar
-
-
