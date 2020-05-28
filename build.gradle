@@ -194,3 +194,7 @@ task copyJar(type: Copy) {
 }
 
 build.finalizedBy copyJar
+
+cleanJar {
+  delete 'build/libs'
+}

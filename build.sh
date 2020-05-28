@@ -1,2 +1,2 @@
 
-./gradlew build
+./gradlew cleanJar build
