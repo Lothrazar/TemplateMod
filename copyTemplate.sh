@@ -17,8 +17,8 @@ mkdir "../${dest}"
 echo "copying to folder ../${dest}"
 
 declare -a arr=(
-	"gradle" "src" "build.gradle" ".gitignore" ".github" 
-	"gradle.properties" "gradlew" "gradlew.bat" "setup.sh" "dist.sh" "update.json"
+	"src" ".github" "gradle" ".gitignore" "build.gradle" "build.sh"
+	"gradle.properties" "gradlew" "gradlew.bat" "setup.sh" "update.json"
 )
 
 # copy each file/folder
