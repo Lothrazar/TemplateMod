@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# deprecated; use github create repo from template feature
+# if using this, move to root folder before using 
+
 
 if [ -z "$1" ]
   then

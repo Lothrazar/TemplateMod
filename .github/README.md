@@ -4,7 +4,7 @@ A Forge mod for Minecraft Java
 
 - Clone this repository and add the files into the unzipped MDK folder
 
-- run ./setup.sh
+- run ./scripts/setup.sh
 
 - Open as a Gradle project in Eclipse (or your favorite Java IDE)
 
