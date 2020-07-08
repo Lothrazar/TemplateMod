@@ -19,6 +19,7 @@ public class ExampleMod {
 
   public static final String MODID = "examplemod";
   public static final String certificateFingerprint = "@FINGERPRINT@";
+  @SuppressWarnings("deprecation")//this is literally from the only tutorial i can find there is no other way 
   public static final IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
   public static final Logger LOGGER = LogManager.getLogger();
   public static ConfigManager config;
