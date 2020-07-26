@@ -1,0 +1,16 @@
+[
+{
+  "modid": "examplemod",
+  "name": "Example Mod Forge Template",
+  "description": "Template mod by Lothrazar ",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/",
+  "updateUrl": "https://www.curseforge.com/minecraft/mc-mods/",
+  "authorList": ["Lothrazar"],
+  "credits": "The Forge and FML developers",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,16 +1,9 @@
 package com.lothrazar.examplemod;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLFingerprintViolationEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ExampleEvents {
-
-  @SubscribeEvent
-  public void onServerStarting(FMLServerStartingEvent event) {
-    // when the world is starting up 
-    // event.getServer()
-  }
 
   @SubscribeEvent
   public static void onFingerprintViolation(FMLFingerprintViolationEvent event) {
