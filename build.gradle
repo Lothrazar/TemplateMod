@@ -24,9 +24,9 @@ minecraft {
     mappings = "stable_39"
     makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     useDepAts = true
-//    replace '@FINGERPRINT@', project.findProperty('signSHA1')
-//	replaceIn "StorageNetwork.java"
+    replace '@FINGERPRINT@', project.findProperty('signSHA1')
     replace "@VERSION@", "${mod_version}"
+	replaceIn "ExampleMod.java"
 }
 task signJar(type: SignJar, dependsOn: reobfJar) {
 

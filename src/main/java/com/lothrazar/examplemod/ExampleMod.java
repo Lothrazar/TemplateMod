@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = ExampleMod.MODID)
+@Mod(modid = ExampleMod.MODID, certificateFingerprint = ExampleMod.certificateFingerprint)
 public class ExampleMod {
 
   public Logger logger;
