@@ -19,5 +19,6 @@ public class FilledMapItemRefreshMixin {
     FilledMapItem map = (FilledMapItem) (Object) this;
     //proof is not null
     Item test = map.asItem();
+    System.out.println("TEST");
   }
 }
