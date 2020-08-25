@@ -15,6 +15,6 @@ public class ServerProxy implements IProxy {
 
   @Override
   public PlayerEntity getClientPlayer() {
-    return null;
+    throw new IllegalStateException("Client side only code on the server");
   }
 }

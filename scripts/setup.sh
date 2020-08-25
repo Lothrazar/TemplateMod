@@ -6,3 +6,6 @@
 # you may need to hard refresh sometimes, for example changing versions or mappings
 
 # ./gradlew genEclipseRuns --refresh-dependencies
+
+echo "update your IDE debug configuration Program Arguments with:  "
+echo "--mixin mixins.myplugin.json"

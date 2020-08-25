@@ -19,18 +19,19 @@ version="${file.jarVersion}" #mandatory
  # A display name for the mod
 displayName="Example Mod" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="https://raw.githubusercontent.com/Lothrazar/MODPAGEGOESHERE/master/update.json" #optional
-# A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="CURSEWEBSITEGOESHERE" #optional
+updateJSONURL="https://raw.githubusercontent.com/Lothrazar/ForgeTemplate/trunk/1.16/update.json" #optional
+# A URL for the "homepage" for this mod, displayed in the mod UI # replace cyclic with your website
+displayURL="https://www.github.com/Lothrazar/ForgeTemplate"
+#displayURL="https://www.curseforge.com/minecraft/mc-mods/cyclic" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
+logoFile="logo.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
+credits="Thanks to forge fml mcp Mojang" #optional
 # A text field displayed in the mod UI
 authors="Lothrazar" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-A small mod by Lothrazar
+A ForgeTemplate examplemod by Lothrazar
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.examplemod]] #optional
