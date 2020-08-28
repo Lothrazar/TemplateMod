@@ -1,6 +1,5 @@
 package com.lothrazar.examplemod.registry;
 
-import com.lothrazar.examplemod.ExampleMod;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
@@ -17,14 +16,12 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.ObjectHolder;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ExampleRegistry {
-
   //change Object to your Block/Item/whatever 
-  @ObjectHolder(ExampleMod.MODID + ":anything")
-  public static Object anything;
+  //  @ObjectHolder(ExampleMod.MODID + ":anything")
+  //  public static Object anything;
 
   @SubscribeEvent
   public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
