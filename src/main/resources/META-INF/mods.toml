@@ -24,7 +24,7 @@ updateJSONURL="https://raw.githubusercontent.com/Lothrazar/ForgeTemplate/trunk/1
 displayURL="https://www.github.com/Lothrazar/ForgeTemplate"
 #displayURL="https://www.curseforge.com/minecraft/mc-mods/cyclic" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="logo.png" #optional
+logoFile="logoFile.png" #optional
 # A text field displayed in the mod UI
 credits="Thanks to forge fml mcp Mojang" #optional
 # A text field displayed in the mod UI
