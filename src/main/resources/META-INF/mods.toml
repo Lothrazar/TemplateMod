@@ -9,7 +9,7 @@ license="MIT"
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
 loaderVersion="[26,)" #mandatory (26 is current forge version)
 # A URL to refer people to when problems occur with this mod
-issueTrackerURL="https://github.com/Lothrazar/MODPAGEGOESHERE/issues" #optional
+issueTrackerURL="https://github.com/Lothrazar/ForgeTemplate/issues" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
@@ -22,7 +22,7 @@ displayName="Example Mod" #mandatory
 updateJSONURL="https://raw.githubusercontent.com/Lothrazar/ForgeTemplate/trunk/1.16/update.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI # replace cyclic with your website
 displayURL="https://www.github.com/Lothrazar/ForgeTemplate"
-#displayURL="https://www.curseforge.com/minecraft/mc-mods/cyclic" #optional
+
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="logoFile.png" #optional
 # A text field displayed in the mod UI
@@ -31,7 +31,7 @@ credits="Thanks to forge fml mcp Mojang" #optional
 authors="Lothrazar" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-A ForgeTemplate examplemod by Lothrazar
+examplemod by Lothrazar
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.examplemod]] #optional

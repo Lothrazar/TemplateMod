@@ -20,8 +20,8 @@ mkdir "../${dest}"
 echo "copying to folder ../${dest}"
 
 declare -a arr=(
-	"src" ".github" "gradle" ".gitignore" "build.gradle" "build.sh"
-	"gradle.properties" "gradlew" "gradlew.bat" "setup.sh" "update.json"
+	"src" "scripts" ".github" "gradle" ".gitignore" "build.gradle" 
+	"gradle.properties" "gradlew" "gradlew.bat" "update.json"
 )
 
 # copy each file/folder
@@ -47,6 +47,13 @@ mkdir -p "../${dest}/src/main/resources/data/${dest}/loot_tables/blocks"
 
 touch "../${dest}/src/main/resources/assets/${dest}/lang/en_us.json"
 
-echo "files written"
 
-./setup.sh
+
+cd "../${dest}"
+sed -i "s/examplemod/${dest}/g" build.gradle
+sed -i "s/examplemod/${dest}/g" src/main/resources/pack.mcmeta
+sed -i "s/examplemod/${dest}/g" src/main/resources/META-INF/mods.toml
+sed -i "s/ForgeTemplate/${dest}/g" src/main/resources/META-INF/mods.toml
+
+
+echo "files written"
