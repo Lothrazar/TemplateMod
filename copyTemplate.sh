@@ -57,3 +57,9 @@ sed -i "s/ForgeTemplate/${dest}/g" src/main/resources/META-INF/mods.toml
 
 
 echo "files written"
+
+git init
+git add -A
+git checkout -b trunk/1.16
+
+./scripts/setup.sh

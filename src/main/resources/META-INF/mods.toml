@@ -17,7 +17,8 @@ modId="examplemod" #mandatory
 # The version number of the mod - there's a few well known ${} variables useable here or just hardcode it
 version="${file.jarVersion}" #mandatory
  # A display name for the mod
-displayName="Example Mod" #mandatory
+ 
+displayName="examplemod"#mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 updateJSONURL="https://raw.githubusercontent.com/Lothrazar/ForgeTemplate/trunk/1.16/update.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI # replace cyclic with your website
@@ -30,6 +31,7 @@ credits="Thanks to forge fml mcp Mojang" #optional
 # A text field displayed in the mod UI
 authors="Lothrazar" #optional
 # The description text for the mod (multi line!) (#mandatory)
+
 description='''
 examplemod by Lothrazar
 '''
