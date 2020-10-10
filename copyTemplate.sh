@@ -32,7 +32,8 @@ do
 	cp -r "${file}" "../${dest}/${file}"
 done
 
-cp -r "options.txt" "../${dest}/options.txt"
+mkdir "../${dest}/run/"
+cp -r "options.txt" "../${dest}/run/options.txt"
 
 mkdir -p "../${dest}/src/main/resources/assets/${dest}/blockstates"
 mkdir -p "../${dest}/src/main/resources/assets/${dest}/lang"
