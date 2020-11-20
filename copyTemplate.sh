@@ -64,3 +64,5 @@ git add -A
 git checkout -b trunk/1.16
 
 ./scripts/setup.sh
+
+echo "git remote add o git@github.com:Lothrazar/${dest}.git && git push o -u trunk/1.16"

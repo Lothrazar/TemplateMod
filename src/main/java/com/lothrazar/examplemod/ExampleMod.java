@@ -8,11 +8,9 @@ import com.lothrazar.examplemod.setup.ClientProxy;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 // TODO: The value here should match an entry in the META-INF/mods.toml file
@@ -34,14 +32,5 @@ public class ExampleMod {
   private void setup(final FMLCommonSetupEvent event) {
     //now all blocks/items exist 
     proxy.setup();
-  }
-
-  @SubscribeEvent
-  public static void onFingerprintViolation(FMLFingerprintViolationEvent event) {
-    // https://tutorials.darkhax.net/tutorials/jar_signing/
-    String source = (event.getSource() == null) ? "" : event.getSource().getName() + " ";
-    String msg = ExampleMod.MODID + "Invalid fingerprint detected! The file " + source + "may have been tampered with. This version will NOT be supported by the author!";
-    System.out.println(msg);
-    LOGGER.info(msg);
   }
 }
