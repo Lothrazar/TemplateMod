@@ -1,5 +1,6 @@
 package com.lothrazar.examplemod.event;
 
+import com.lothrazar.examplemod.ExampleMod;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,13 +18,13 @@ public class ItemEvents {
 
   @SubscribeEvent
   public void onLivingDropsEvent(LivingDropsEvent event) {
-    System.out.println(event.getEntity() + " drops" + event.getDrops().size());
+    ExampleMod.LOGGER.info(event.getEntity() + " drops" + event.getDrops().size());
   }
 
   @SubscribeEvent
   public void onLivingDeathEvent(LivingDeathEvent event) {
     LivingEntity liv = event.getEntityLiving();
-    System.out.println("death of " + liv);
+    ExampleMod.LOGGER.info("death of " + liv);
   }
 
   @SubscribeEvent
