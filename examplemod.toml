@@ -1,0 +1,8 @@
+
+#General settings
+[examplemod]
+
+	[examplemod.testing]
+		#Testing mixin spam log if holding filled map
+		serverTest = true
+

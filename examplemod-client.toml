@@ -1,0 +1,8 @@
+
+#Client settings
+[examplemod]
+
+	[examplemod.clientstuff]
+		#Testing client-config this currently prints an accesstransformer.cfg test in log for examplemod
+		attest = true
+

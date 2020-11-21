@@ -4,6 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.lothrazar.examplemod.config.ConfigClientManager;
 import com.lothrazar.examplemod.config.ConfigManager;
+import com.lothrazar.examplemod.event.ItemEvents;
+import com.lothrazar.examplemod.event.WorldGenEvents;
 import com.lothrazar.examplemod.setup.ClientProxy;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
@@ -23,7 +25,6 @@ public class ExampleMod {
   public static final Logger LOGGER = LogManager.getLogger();
 
   public ExampleMod() {
-    MinecraftForge.EVENT_BUS.register(this);
     ConfigManager.setup();
     ConfigClientManager.setup();
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -32,5 +33,7 @@ public class ExampleMod {
   private void setup(final FMLCommonSetupEvent event) {
     //now all blocks/items exist 
     proxy.setup();
+    MinecraftForge.EVENT_BUS.register(new ItemEvents());
+    MinecraftForge.EVENT_BUS.register(new WorldGenEvents());
   }
 }
