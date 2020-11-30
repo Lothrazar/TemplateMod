@@ -42,6 +42,7 @@ public class ExampleRegistry {
   @SubscribeEvent
   public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
     IForgeRegistry<Item> r = event.getRegistry();
+    //  r.register(new ItemTest(new Item.Properties().maxStackSize(1)));
   }
 
   @SubscribeEvent

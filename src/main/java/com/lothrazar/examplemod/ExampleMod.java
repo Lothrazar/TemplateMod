@@ -9,6 +9,7 @@ import com.lothrazar.examplemod.event.WorldGenEvents;
 import com.lothrazar.examplemod.setup.ClientProxy;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
+import net.minecraft.entity.passive.SheepEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +29,7 @@ public class ExampleMod {
     ConfigManager.setup();
     ConfigClientManager.setup();
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+    SheepEntity y;
   }
 
   private void setup(final FMLCommonSetupEvent event) {
