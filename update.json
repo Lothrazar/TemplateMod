@@ -1,11 +1,10 @@
 {
-  "homepage": "https://www.github.com/Lothrazar/ForgeTemplate",
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/_curseslug_",
   "promos": {
     "1.16.4-latest": "1.0.0",
     "1.16.4-recommended": "1.0.0"
   },
   "1.16.4": {
-    "1.0.0": "Release ",
-    "":"loot table changes: remove iron_ingot, carrot, potato from zombie"
+    "1.0.0": "Release "
   }
 }

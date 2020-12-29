@@ -13,9 +13,11 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
+import net.minecraftforge.event.entity.player.PlayerXpEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class ItemEvents {
@@ -43,11 +45,18 @@ public class ItemEvents {
         //nuke it
         if (!living.getItemStackFromSlot(slot).isEmpty()) {
           // 
-          ExampleMod.LOGGER.info(living + " NUKE  from" + slot + "::" + living.getItemStackFromSlot(slot));
-          living.setItemStackToSlot(slot, ItemStack.EMPTY);
+          //          ExampleMod.LOGGER.info(living + " NUKE  from" + slot + "::" + living.getItemStackFromSlot(slot));
+          //          living.setItemStackToSlot(slot, ItemStack.EMPTY);
         }
       }
     }
+  }
+
+  @SubscribeEvent
+  public void onPlayerXpEvent(PlayerXpEvent event) {
+    event.getPlayer().xpCooldown = 0;
+    ExampleMod.LOGGER.info("quiik");
+    EntityItemPickupEvent ev;
   }
 
   @SubscribeEvent

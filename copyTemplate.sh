@@ -4,65 +4,71 @@
 # if using this, move to root folder before using 
 
 
-if [ -z "$1" ]
+if  [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] 
   then
-    echo "No folder name supplied as first argument"
-	echo "Useage: ./_.sh <destination>"
+    echo "Missing argument ($1 $2 $3) Useage: "
+	echo "./copyTemplate.sh <modid> <github> <curseslug>"
 	exit 
 fi
 
-dest=$1
+modid=$1
+github=$2
+curseslug=$3
 
-echo "creating ../${dest}"
-
-mkdir "../${dest}"
-
-echo "copying to folder ../${dest}"
+echo "modid=${modid};  github=${github}; curse=${curseslug}"
+echo "copying files to folder ../${github}"
 
 declare -a arr=(
 	"src" "scripts" ".github" "gradle" ".gitignore" "build.gradle" 
 	"gradle.properties" "gradlew" "gradlew.bat" "update.json"
 )
 
-# copy each file/folder
+sed -i "s/examplemod/${modid}/g" src/main/java/com/lothrazar/examplemod/ExampleMod.java
+mkdir "../${github}"
 
 for file in "${arr[@]}"
 do
 	echo "$file"
-	cp -r "${file}" "../${dest}/${file}"
+	cp -r "${file}" "../${modid}/${file}"
 done
 
-mkdir "../${dest}/run/"
-cp -r "options.txt" "../${dest}/run/options.txt"
+mkdir "../${modid}/run/"
+cp -r "options.txt" "../${modid}/run/options.txt"
 
-mkdir -p "../${dest}/src/main/resources/assets/${dest}/blockstates"
-mkdir -p "../${dest}/src/main/resources/assets/${dest}/lang"
-mkdir -p "../${dest}/src/main/resources/assets/${dest}/models/block"
-mkdir -p "../${dest}/src/main/resources/assets/${dest}/models/item"
-mkdir -p "../${dest}/src/main/resources/assets/${dest}/textures"
-mkdir -p "../${dest}/src/main/resources/assets/${dest}/textures/block"
-mkdir -p "../${dest}/src/main/resources/assets/${dest}/textures/item"
+mkdir -p "../${github}/src/main/resources/assets/${modid}/blockstates"
+mkdir -p "../${github}/src/main/resources/assets/${modid}/lang"
+mkdir -p "../${github}/src/main/resources/assets/${modid}/models/block"
+mkdir -p "../${github}/src/main/resources/assets/${modid}/models/item"
+mkdir -p "../${github}/src/main/resources/assets/${modid}/textures"
+mkdir -p "../${github}/src/main/resources/assets/${modid}/textures/block"
+mkdir -p "../${github}/src/main/resources/assets/${modid}/textures/item"
 
-mkdir -p "../${dest}/src/main/resources/data/${dest}/recipes"
-mkdir -p "../${dest}/src/main/resources/data/${dest}/loot_tables/blocks"
+mkdir -p "../${github}/src/main/resources/data/${modid}/recipes"
+mkdir -p "../${github}/src/main/resources/data/${modid}/loot_tables/blocks"
 
-touch "../${dest}/src/main/resources/assets/${dest}/lang/en_us.json"
+touch "../${github}/src/main/resources/assets/${modid}/lang/en_us.json"
 
+echo "editing templates"
 
+cd "../${github}"
+sed -i "s/examplemod/${modid}/g" build.gradle
+sed -i "s/examplemod/${modid}/g" src/main/resources/pack.mcmeta
+sed -i "s/examplemod/${modid}/g" src/main/resources/META-INF/mods.toml
 
-cd "../${dest}"
-sed -i "s/examplemod/${dest}/g" build.gradle
-sed -i "s/examplemod/${dest}/g" src/main/resources/pack.mcmeta
-sed -i "s/examplemod/${dest}/g" src/main/resources/META-INF/mods.toml
-sed -i "s/ForgeTemplate/${dest}/g" src/main/resources/META-INF/mods.toml
+sed -i "s/ForgeTemplate/${github}/g" src/main/resources/META-INF/mods.toml
 
-
-echo "files written"
+sed -i "s/_curseslug_/${curseslug}/g" src/main/resources/META-INF/mods.toml
+sed -i "s/_curseslug_/${curseslug}/g" update.json
+sed -i "s/_curseslug_/${curseslug}/g" gradle.properties
 
 git init
 git add -A
 git checkout -b trunk/1.16
 
-./scripts/setup.sh
+echo "create a curse project with the url https://www.curseforge.com/minecraft/mc-mods/${curseslug}"
+echo "then run the following three commands to finish setup:"
 
-echo "git remote add o git@github.com:Lothrazar/${dest}.git && git push o -u trunk/1.16"
+echo "./scripts/setup.sh"
+echo "git commit -am 'initial commit'"
+echo "git remote add o git@github.com:Lothrazar/${github}.git"
+echo "git push o -u trunk/1.16"

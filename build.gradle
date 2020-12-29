@@ -99,7 +99,7 @@ minecraft {
 }
 
 mixin {
-       add sourceSets.main, "main.refmap.json"
+       add sourceSets.main, "lothrazarexamplemod.refmap.json"
 
        disableTargetValidator = false
 }
@@ -110,9 +110,15 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-
     compile fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
     compile fg.deobf("top.theillusivec4.curios:curios-forge:${mc_version}-${curios_version}")
+      
+//    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
+//    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+
+//    compileOnly fg.deobf("vazkii.botania:Botania:${botania_version}:api")
+//    runtimeOnly fg.deobf("vazkii.botania:Botania:${botania_version}")
+    
     
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

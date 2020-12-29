@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import com.lothrazar.examplemod.config.ConfigClientManager;
 import com.lothrazar.examplemod.config.ConfigManager;
 import com.lothrazar.examplemod.event.ItemEvents;
-import com.lothrazar.examplemod.event.WorldGenEvents;
 import com.lothrazar.examplemod.setup.ClientProxy;
 import com.lothrazar.examplemod.setup.IProxy;
 import com.lothrazar.examplemod.setup.ServerProxy;
@@ -36,6 +35,6 @@ public class ExampleMod {
     //now all blocks/items exist 
     proxy.setup();
     MinecraftForge.EVENT_BUS.register(new ItemEvents());
-    MinecraftForge.EVENT_BUS.register(new WorldGenEvents());
+    //  MinecraftForge.EVENT_BUS.register(new WorldGenEvents());
   }
 }
