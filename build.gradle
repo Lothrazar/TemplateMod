@@ -159,9 +159,9 @@ repositories {
   	name = "curios"
     url = "https://maven.theillusivec4.top/"
   }
-  maven {
-    url 'http://maven.mcmoddev.com'
-  }
+ // maven {
+ //   url 'http://maven.mcmoddev.com'
+ // }
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
