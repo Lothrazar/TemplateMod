@@ -204,9 +204,6 @@ publishing {
 
 task signJar(type: SignJar, dependsOn: jar) {
 
-    // findProperty allows us to reference the property without it existing. 
-    // Using project.propName would cause the script to fail validation if 
-    // the property did not exist. 
     keyStore = project.findProperty('keyStore')
     alias = project.findProperty('keyStoreAlias')
     storePass = project.findProperty('keyStorePass')
@@ -215,14 +212,14 @@ task signJar(type: SignJar, dependsOn: jar) {
     outputFile = jar.archivePath
 }
 
-build.dependsOn signJar
+// build.dependsOn signJar
 
 task copyJar(type: Copy) {
     from jar
     into "${dist_folder}"
 }
 
-build.finalizedBy copyJar
+// build.finalizedBy copyJar
 
 cleanJar {
   delete 'build/libs'
