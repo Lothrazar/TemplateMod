@@ -1,9 +1,5 @@
 package com.lothrazar.examplemod.mixin;
 
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.lothrazar.examplemod.ExampleMod;
 import com.lothrazar.examplemod.config.ConfigManager;
 import net.minecraft.entity.Entity;
@@ -11,6 +7,10 @@ import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FilledMapItem.class)
 public class FilledMapItemRefreshMixin {

@@ -15,6 +15,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'checkstyle'
 
 import net.minecraftforge.gradle.common.task.SignJar
 import groovy.json.JsonSlurper
@@ -25,6 +26,15 @@ group = 'com.lothrazar.examplemod' // http://maven.apache.org/guides/mini/guide-
 archivesBaseName = 'examplemod'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+
+checkstyle {
+    toolVersion '7.8.1'
+    configFile file("checkstyle.xml")
+}
+checkstyleMain {
+    source ='src/main/java'
+}
+
 
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
