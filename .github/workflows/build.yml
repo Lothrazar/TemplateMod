@@ -19,8 +19,8 @@ jobs:
           # 11,   # Current Java LTS
           # 15    # Latest version
         ]
-        # and run on both Linux and Windows
-        os: [ubuntu-20.04, windows-latest]
+        # ubuntu-20.04 FAILS to get maven dependencies, even when windows-latest passes perfectly fine. exact same everything
+        os: [windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout repository
