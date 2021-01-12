@@ -10,7 +10,7 @@ A Forge mod for Template Minecraft Java
 
 - Open as a Gradle project in Eclipse (or your favorite Java IDE)
 
-The following badges can be enabld when you have a curseforge project available
+The following badges can be enabled when you have a curseforge project available
 
 [![](http://cf.way2muchnoise.eu/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK) 
 [![](http://cf.way2muchnoise.eu/versions/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK)
