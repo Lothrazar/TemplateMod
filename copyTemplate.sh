@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# deprecated; use github create repo from template feature
-# if using this, move to root folder before using 
-
-
 if  [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] 
   then
     echo "Missing argument ($1 $2 $3) Useage: "
@@ -15,7 +11,7 @@ modid=$1
 github=$2
 curseslug=$3
 
-echo "modid=${modid};  github=${github}; curse=${curseslug}"
+echo "modid = ${modid};  github = ${github}; curse = ${curseslug}"
 echo "copying files to folder ../${github}"
 
 declare -a arr=(
