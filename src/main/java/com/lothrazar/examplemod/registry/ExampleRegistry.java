@@ -15,7 +15,6 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ExampleRegistry {
@@ -25,34 +24,34 @@ public class ExampleRegistry {
 
   @SubscribeEvent
   public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-    IForgeRegistry<Block> r = event.getRegistry();
+    //IForgeRegistry<Block> r = event.getRegistry();
     //    r.register(  );
   }
 
   @SubscribeEvent
   public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event) {
-    IForgeRegistry<TileEntityType<?>> r = event.getRegistry();
+    //   IForgeRegistry<TileEntityType<?>> r = event.getRegistry();
   }
 
   @SubscribeEvent
   public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event) {
-    IForgeRegistry<ContainerType<?>> r = event.getRegistry();
+    // IForgeRegistry<ContainerType<?>> r = event.getRegistry();
   }
 
   @SubscribeEvent
   public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
-    IForgeRegistry<Item> r = event.getRegistry();
+    //  IForgeRegistry<Item> r = event.getRegistry();
     //  r.register(new ItemTest(new Item.Properties().maxStackSize(1)));
   }
 
   @SubscribeEvent
   public static void onEnchantRegister(final RegistryEvent.Register<Enchantment> event) {
-    IForgeRegistry<Enchantment> r = event.getRegistry();
+    //  IForgeRegistry<Enchantment> r = event.getRegistry();
   }
 
   @SubscribeEvent
   public static void registerEntity(RegistryEvent.Register<EntityType<?>> e) {
-    IForgeRegistry<EntityType<?>> r = e.getRegistry();
+    // IForgeRegistry<EntityType<?>> r = e.getRegistry();
   }
 
   @OnlyIn(Dist.CLIENT)
@@ -63,16 +62,16 @@ public class ExampleRegistry {
 
   @SubscribeEvent
   public static void onPotEffectRegistry(RegistryEvent.Register<Effect> event) {
-    IForgeRegistry<Effect> r = event.getRegistry();
+    //  IForgeRegistry<Effect> r = event.getRegistry();
   }
 
   @SubscribeEvent
   public static void onPotRegistry(RegistryEvent.Register<Potion> event) {
-    IForgeRegistry<Potion> r = event.getRegistry();
+    //   IForgeRegistry<Potion> r = event.getRegistry();
   }
 
   @SubscribeEvent
   public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
-    IForgeRegistry<SoundEvent> r = event.getRegistry();
+    //  IForgeRegistry<SoundEvent> r = event.getRegistry();
   }
 }

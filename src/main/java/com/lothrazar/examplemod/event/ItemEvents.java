@@ -7,13 +7,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
@@ -54,14 +50,12 @@ public class ItemEvents {
 
   @SubscribeEvent
   public void onPlayerXpEvent(PlayerXpEvent event) {
-    event.getPlayer().xpCooldown = 0;
-    ExampleMod.LOGGER.info("quiik");
-    EntityItemPickupEvent ev;
+    //    event.getPlayer().xpCooldown = 0;
+    //    ExampleMod.LOGGER.info("quiik");
   }
 
   @SubscribeEvent
   public void onLivingDropsEvent(LivingDropsEvent event) {
-    EntityJoinWorldEvent test;
     ExampleMod.LOGGER.info(event.getEntity() + " drops" + event.getDrops().size());
   }
 
@@ -76,9 +70,7 @@ public class ItemEvents {
     if (!event.getItemStack().isEmpty()) {
       return;
     }
-    World world = event.getWorld();
-    BlockPos p = event.getPos();
-    BlockState bs = world.getBlockState(p);
+    BlockState bs = event.getWorld().getBlockState(event.getPos());
   }
 
   @SubscribeEvent
@@ -91,6 +83,5 @@ public class ItemEvents {
     if (held.isEmpty()) {
       return;
     }
-    World world = player.getEntityWorld();
   }
 }

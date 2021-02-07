@@ -21,7 +21,7 @@ public class PacketRegistry {
 
   public static void setup() {
     //https://gist.github.com/williewillus/353c872bcf1a6ace9921189f6100d09a
-    int id = 0;
+    //    int id = 0;
     //    INSTANCE.registerMessage(id++,...
   }
 
