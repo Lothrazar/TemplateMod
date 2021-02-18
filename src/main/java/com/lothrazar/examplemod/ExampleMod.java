@@ -1,10 +1,6 @@
 package com.lothrazar.examplemod;
 
-import com.lothrazar.examplemod.config.ConfigClientManager;
-import com.lothrazar.examplemod.config.ConfigManager;
-import com.lothrazar.examplemod.event.ItemEvents;
 import net.minecraft.block.Blocks;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -20,16 +16,14 @@ public class ExampleMod {
 
   public ExampleMod() {
     ConfigManager.setup();
-    ConfigClientManager.setup();
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
   }
 
   private void setup(final FMLCommonSetupEvent event) {
     //now all blocks/items exist  
-    MinecraftForge.EVENT_BUS.register(new ItemEvents());
-    //  MinecraftForge.EVENT_BUS.register(new WorldGenEvents());
-    if (ConfigClientManager.ATTEST.get()) {
+    //MinecraftForge.EVENT_BUS.register(new ItemEvents());
+    if (ConfigManager.TESTING.get()) {
       float test = Blocks.BEDROCK.getDefaultState().hardness;
       ExampleMod.LOGGER.info("accesstransformer.cfg test bedrock hardness = " + test);
     }

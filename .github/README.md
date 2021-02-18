@@ -1,16 +1,27 @@
 ![build](https://github.com/Lothrazar/ForgeTemplate/workflows/build/badge.svg)
 
-A Forge mod for Template Minecraft Java
+A Template for Minecraft Forge mods [https://files.minecraftforge.net/](https://files.minecraftforge.net)
 
-- Download a Forge MDK from [https://files.minecraftforge.net/](https://files.minecraftforge.net)
 
-- Clone this repository and add the files into the unzipped MDK folder
+Use the GitHub template button, or even better the copyTemplate.sh script
 
-- run ./scripts/setup.sh
-
-- Open as a Gradle project in Eclipse (or your favorite Java IDE)
-
-The following badges can be enabled when you have a curseforge project available
 
 [![](http://cf.way2muchnoise.eu/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK) 
 [![](http://cf.way2muchnoise.eu/versions/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK)
+
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Twitter Badge](https://img.shields.io/badge/contact-twitter-blue.svg)](https://twitter.com/lothrazar)
+[![Discord](https://img.shields.io/discord/749302798797242449.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/uWZ3jf56fV)
+[![links](https://img.shields.io/badge/more-links-ff69b4.svg)](https://allmylinks.com/lothrazar)
+[![Support](https://img.shields.io/badge/Patreon-Support-orange.svg?logo=Patreon)](https://www.patreon.com/Lothrazar)
+
+
+
+# Servers
+
+Looking to host a Modded server? Get a discount with my promo code
+
+
+[![Nodecraft Server](https://nodecraft.com/assets/images/partners/loth/mashup.png)](https://nodecraft.com/r/loth)

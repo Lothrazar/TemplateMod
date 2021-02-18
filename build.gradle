@@ -1,21 +1,21 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url = 'https://dist.creeper.host/Sponge/maven' }
+    //    maven { url = 'https://dist.creeper.host/Sponge/maven' }
         jcenter()
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    //    classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
-apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'checkstyle'
+// apply plugin: 'org.spongepowered.mixin'
 
 import net.minecraftforge.gradle.common.task.SignJar
 import groovy.json.JsonSlurper
@@ -53,8 +53,8 @@ minecraft {
             workingDirectory project.file('run')
             
 // some IDE's can get the Program arguments here  --mixin mixins.myplugin.json
-            args "--mixin mixins.myplugin.json"
-		    property 'mixin', 'mixins.myplugin.json'
+            //args "--mixin mixins.myplugin.json"
+		        //property 'mixin', 'mixins.myplugin.json'
 			
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
@@ -105,11 +105,11 @@ minecraft {
     }
 }
 
-mixin {
-       add sourceSets.main, "lothrazarexamplemod.refmap.json"
-
-       disableTargetValidator = false
-}
+// mixin {
+//       add sourceSets.main, "lothrazarexamplemod.refmap.json"
+//
+//       disableTargetValidator = false
+// }
 
 dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
@@ -119,8 +119,8 @@ dependencies {
  
     compile fg.deobf("mezz.jei:${jei_version}")
     compile fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
-    compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
+ //   compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
+ //   runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
 
     implementation fg.deobf("curse.maven:crafttweaker-239197:3183630")
@@ -133,21 +133,6 @@ dependencies {
     implementation fg.deobf("curse.maven:refined-storage-243076:3157354")
     implementation fg.deobf("curse.maven:storage-drawers-223852:3180569")
     
-    
-    // You may put jars on which you depend on in ./libs or you may define them like so..
-    // compile "some.group:artifact:version:classifier"
-    // compile "some.group:artifact:version"
-
-    // Real examples
-    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // These dependencies get remapped to your current MCP mappings
-    // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
@@ -156,13 +141,13 @@ dependencies {
 
 repositories {
   maven {
-    name = "mappings"
-    url = 'https://dogforce-games.com/maven'
-  }
-  maven {
     // location of the maven that hosts JEI files
     name = "Progwml6 maven"
     url = 'https://dvs1.progwml6.com/files/maven/'
+  }
+  maven {
+    name = "mappings"
+    url = 'https://dogforce-games.com/maven'
   }
   maven {
     // location of a maven mirror for JEI files, as a fallback
@@ -187,11 +172,11 @@ jar {
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"examplemodsareus",
-            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
             
-            "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
-            "MixinConfigs": "mixins.myplugin.json",
-            "FMLCorePluginContainsFMLMod": "true"
+           // ,"TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+           // "MixinConfigs": "mixins.myplugin.json",
+           // "FMLCorePluginContainsFMLMod": "true"
         ])
     }
 }
@@ -226,14 +211,10 @@ task signJar(type: SignJar, dependsOn: jar) {
     outputFile = jar.archivePath
 }
 
-// build.dependsOn signJar
-
 task copyJar(type: Copy) {
     from jar
     into "${dist_folder}"
 }
-
-// build.finalizedBy copyJar
 
 cleanJar {
   delete 'build/libs'

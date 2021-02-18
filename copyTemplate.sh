@@ -14,22 +14,23 @@ curseslug=$3
 echo "modid = ${modid};  github = ${github}; curse = ${curseslug}"
 echo "copying files to folder ../${github}"
 
+mkdir "../${github}"
+
 declare -a arr=(
 	"src" "scripts" ".github" "gradle" ".gitignore" "build.gradle" 
 	"gradle.properties" "gradlew" "gradlew.bat" "update.json"
 )
 
-sed -i "s/examplemod/${modid}/g" src/main/java/com/lothrazar/examplemod/ExampleMod.java
-mkdir "../${github}"
-
 for file in "${arr[@]}"
 do
 	echo "$file"
-	cp -r "${file}" "../${modid}/${file}"
+	cp -r "${file}" "../${github}/${file}"
 done
 
-mkdir "../${modid}/run/"
-cp -r "options.txt" "../${modid}/run/options.txt"
+echo "copying src"
+
+mkdir "../${github}/run/"
+cp -r "options.txt" "../${github}/run/options.txt"
 
 mkdir -p "../${github}/src/main/resources/assets/${modid}/blockstates"
 mkdir -p "../${github}/src/main/resources/assets/${modid}/lang"
@@ -44,9 +45,15 @@ mkdir -p "../${github}/src/main/resources/data/${modid}/loot_tables/blocks"
 
 touch "../${github}/src/main/resources/assets/${modid}/lang/en_us.json"
 
-echo "editing templates"
+echo "editing templates in the new folder"
 
 cd "../${github}"
+
+mv src/main/java/com/lothrazar/examplemod "src/main/java/com/lothrazar/${modid}"
+sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ExampleMod.java"
+sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ExampleRegistry.java"
+sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ConfigManager.java"
+
 sed -i "s/examplemod/${modid}/g" build.gradle
 sed -i "s/examplemod/${modid}/g" src/main/resources/pack.mcmeta
 sed -i "s/examplemod/${modid}/g" src/main/resources/META-INF/mods.toml
@@ -58,13 +65,15 @@ sed -i "s/_curseslug_/${curseslug}/g" update.json
 sed -i "s/_curseslug_/${curseslug}/g" gradle.properties
 
 git init
-git add -A
 git checkout -b trunk/1.16
-
+echo ""
+echo "####"
+echo ""
 echo "create a curse project with the url https://www.curseforge.com/minecraft/mc-mods/${curseslug}"
 echo "then run the following three commands to finish setup:"
 
 echo "./scripts/setup.sh"
+echo "git add -A"
 echo "git commit -am 'initial commit'"
 echo "git remote add o git@github.com:Lothrazar/${github}.git"
 echo "git push o -u trunk/1.16"
