@@ -8,13 +8,13 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-@Mod(ExampleMod.MODID)
-public class ExampleMod {
+@Mod(ModMain.MODID)
+public class ModMain {
 
   public static final String MODID = "examplemod";
   public static final Logger LOGGER = LogManager.getLogger();
 
-  public ExampleMod() {
+  public ModMain() {
     ConfigManager.setup();
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
@@ -25,7 +25,7 @@ public class ExampleMod {
     //MinecraftForge.EVENT_BUS.register(new ItemEvents());
     if (ConfigManager.TESTING.get()) {
       float test = Blocks.BEDROCK.getDefaultState().hardness;
-      ExampleMod.LOGGER.info("accesstransformer.cfg test bedrock hardness = " + test);
+      ModMain.LOGGER.info("accesstransformer.cfg test bedrock hardness = " + test);
     }
   }
 

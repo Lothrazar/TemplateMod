@@ -14,7 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ExampleRegistry {
+public class ModRegistry {
   //change Object to your Block/Item/whatever 
   //  @ObjectHolder(ExampleMod.MODID + ":anything")
   //  public static Item anything;

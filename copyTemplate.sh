@@ -43,15 +43,17 @@ mkdir -p "../${github}/src/main/resources/assets/${modid}/textures/item"
 mkdir -p "../${github}/src/main/resources/data/${modid}/recipes"
 mkdir -p "../${github}/src/main/resources/data/${modid}/loot_tables/blocks"
 
-touch "../${github}/src/main/resources/assets/${modid}/lang/en_us.json"
 
 echo "editing templates in the new folder"
 
 cd "../${github}"
 
+touch "src/main/resources/assets/${modid}/lang/en_us.json"
+echo "{ }" >> "src/main/resources/assets/${modid}/lang/en_us.json"
+
 mv src/main/java/com/lothrazar/examplemod "src/main/java/com/lothrazar/${modid}"
-sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ExampleMod.java"
-sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ExampleRegistry.java"
+sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ModMain.java"
+sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ModRegistry.java"
 sed -i "s/examplemod/${modid}/g" "src/main/java/com/lothrazar/${modid}/ConfigManager.java"
 
 sed -i "s/examplemod/${modid}/g" build.gradle

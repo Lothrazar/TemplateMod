@@ -16,14 +16,14 @@ public class ConfigManager {
   }
 
   private static void initConfig() {
-    CFG.comment("General settings").push(ExampleMod.MODID);
+    CFG.comment("General settings").push(ModMain.MODID);
     TESTING = CFG.comment("Testing mixin spam log if holding filled map").define("serverTest", true);
     CFG.pop(); // one pop for every push
     COMMON_CONFIG = CFG.build();
   }
 
   public static void setup() {
-    final CommentedFileConfig configData = CommentedFileConfig.builder(FMLPaths.CONFIGDIR.get().resolve(ExampleMod.MODID + ".toml"))
+    final CommentedFileConfig configData = CommentedFileConfig.builder(FMLPaths.CONFIGDIR.get().resolve(ModMain.MODID + ".toml"))
         .sync()
         .autosave()
         .writingMode(WritingMode.REPLACE)
