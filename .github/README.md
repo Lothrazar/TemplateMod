@@ -6,8 +6,8 @@ A Template for Minecraft Forge mods [https://files.minecraftforge.net/](https://
 Use the GitHub template button, or even better the copyTemplate.sh script
 
 
-[![](http://cf.way2muchnoise.eu/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK) 
-[![](http://cf.way2muchnoise.eu/versions/CURSEID.svg)](https://www.curseforge.com/minecraft/mc-mods/CURSELINK)
+[![](http://cf.way2muchnoise.eu/0.svg)](https://www.curseforge.com/minecraft/mc-mods/_curseslug_) 
+[![](http://cf.way2muchnoise.eu/versions/0.svg)](https://www.curseforge.com/minecraft/mc-mods/_curseslug_)
 
 
 ![build](https://github.com/Lothrazar/ForgeTemplate/workflows/build/badge.svg)

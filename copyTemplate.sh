@@ -61,10 +61,12 @@ sed -i "s/examplemod/${modid}/g" src/main/resources/pack.mcmeta
 sed -i "s/examplemod/${modid}/g" src/main/resources/META-INF/mods.toml
 
 sed -i "s/ForgeTemplate/${github}/g" src/main/resources/META-INF/mods.toml
+sed -i "s/ForgeTemplate/${github}/g" .github/README.md
 
 sed -i "s/_curseslug_/${curseslug}/g" src/main/resources/META-INF/mods.toml
 sed -i "s/_curseslug_/${curseslug}/g" update.json
 sed -i "s/_curseslug_/${curseslug}/g" gradle.properties
+sed -i "s/_curseslug_/${curseslug}/g" .github/README.md
 
 git init
 git checkout -b trunk/1.16

@@ -21,7 +21,7 @@ version="${file.jarVersion}" #mandatory
 displayName="examplemod" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 updateJSONURL="https://raw.githubusercontent.com/Lothrazar/ForgeTemplate/trunk/1.16/update.json" #optional
-# A URL for the "homepage" for this mod, displayed in the mod UI # replace cyclic with your website
+# A URL for the "homepage" for this mod, displayed in the mod UI # replace with your website
 displayURL="https://www.curseforge.com/minecraft/mc-mods/_curseslug_"
 
 # A file name (in the root of the mod JAR) containing a logo for display
