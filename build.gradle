@@ -118,14 +118,14 @@ dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
  
     compile fg.deobf("mezz.jei:${jei_version}")
-    compile fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+ //   compile fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
  //   compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
  //   runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
 
-    implementation fg.deobf("curse.maven:simple-storage-network-268495:3163007")
-    implementation fg.deobf("curse.maven:cyclic-239286:3188762")
-    implementation fg.deobf("curse.maven:ctm-267602:3137659")
+  //  implementation fg.deobf("curse.maven:simple-storage-network-268495:3257204")
+  //  implementation fg.deobf("curse.maven:cyclic-239286:3249448")
+  //  implementation fg.deobf("curse.maven:ctm-267602:3137659")
   //  implementation fg.deobf("curse.maven:storage-drawers-223852:3180569")
   //  implementation fg.deobf("curse.maven:refined-storage-243076:3157354")
   //  implementation fg.deobf("curse.maven:cucumber-272335:3187116")

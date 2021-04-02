@@ -1,6 +1,7 @@
 package com.lothrazar.examplemod;
 
 import net.minecraft.block.Blocks;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -22,7 +23,8 @@ public class ModMain {
 
   private void setup(final FMLCommonSetupEvent event) {
     //now all blocks/items exist  
-    //MinecraftForge.EVENT_BUS.register(new ItemEvents());
+    //    MinecraftForge.EVENT_BUS.register(new ItemEvents());
+    MinecraftForge.EVENT_BUS.register(this);
     if (ConfigManager.TESTING.get()) {
       float test = Blocks.BEDROCK.getDefaultState().hardness;
       ModMain.LOGGER.info("accesstransformer.cfg test bedrock hardness = " + test);
