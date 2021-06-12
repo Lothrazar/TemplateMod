@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         jcenter()
+	maven { url = 'https://maven.minecraftforge.net/' }
         maven { url = "http://files.minecraftforge.net/maven" }
     }
     dependencies {
