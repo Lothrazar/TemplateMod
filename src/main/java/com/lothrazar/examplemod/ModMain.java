@@ -26,10 +26,6 @@ public class ModMain {
 
   private void setup(final FMLCommonSetupEvent event) {
     //    MinecraftForge.EVENT_BUS.register(new WhateverEvents()); 
-    //    if (ConfigManager.TESTING.get()) {
-    //      float test = Blocks.BEDROCK.getDefaultState().hardness;
-    //      ModMain.LOGGER.info("accesstransformer.cfg test bedrock hardness = " + test);
-    //    }
   }
 
   private void setupClient(final FMLClientSetupEvent event) {
