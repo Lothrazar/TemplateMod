@@ -1,0 +1,55 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" c ",
+		" d ",
+		" f "
+	],
+	"key": {
+		"d": {
+			"item": "minecraft:anvil"
+		},
+		"c": {
+			"item": "minecraft:iron_sword"
+		},
+		"f": {
+			"type": "forge:nbt",
+			"item": "minecraft:enchanted_book",
+			"nbt": {
+				"StoredEnchantments": [
+					{
+						"id": "minecraft:mending",
+						"lvl": 1
+					}
+				]
+			}
+		}
+	},
+	"result": {
+		"item": "minecraft:iron_sword",
+		"count": 1,
+		"nbt": {
+			"Enchantments": [
+				{
+					"id": "minecraft:unbreaking",
+					"lvl": 1
+				}
+			]
+		}
+	},
+	"conditions": [
+		{
+			"values": [
+				{
+					"modid": "forge",
+					"type": "forge:mod_loaded"
+				},
+				{
+					"item": "minecraft:iron_sword",
+					"type": "forge:item_exists"
+				}
+			],
+			"type": "forge:and"
+		}
+	]
+}
