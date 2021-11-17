@@ -18,7 +18,7 @@ mkdir "../${github}"
 
 declare -a arr=(
 	"src" "scripts" ".github" "gradle" ".gitignore" "build.gradle" 
-	"gradle.properties" "gradlew" "gradlew.bat" "update.json"
+	"gradle.properties" "gradlew" "gradlew.bat" "update.json" "LICENSE"
 )
 
 for file in "${arr[@]}"
