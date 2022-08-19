@@ -18,7 +18,7 @@ mkdir "../${github}"
 
 declare -a arr=(
 	"src" "scripts" ".github" "gradle" ".gitignore" "build.gradle" 
-	"gradle.properties" "gradlew" "gradlew.bat" "update.json"
+	"gradle.properties" "gradlew" "gradlew.bat" "update.json" "LICENSE"
 )
 
 for file in "${arr[@]}"
@@ -31,6 +31,8 @@ echo "copying src"
 
 mkdir "../${github}/run/"
 cp -r "options.txt" "../${github}/run/options.txt"
+
+cp -r "libs/" "../${github}/"
 
 mkdir -p "../${github}/src/main/resources/assets/${modid}/blockstates"
 mkdir -p "../${github}/src/main/resources/assets/${modid}/lang"

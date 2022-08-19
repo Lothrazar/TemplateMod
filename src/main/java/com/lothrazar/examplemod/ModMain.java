@@ -18,7 +18,7 @@ public class ModMain {
     IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
     ModRegistry.BLOCKS.register(eventBus);
     ModRegistry.ITEMS.register(eventBus);
-    ModRegistry.TILE_ENTITIES.register(eventBus);
+    ModRegistry.BLOCK_ENTITIES.register(eventBus);
     ConfigManager.setup();
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
