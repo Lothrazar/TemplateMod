@@ -30,7 +30,9 @@ done
 echo "copying src"
 
 mkdir "../${github}/run/"
-cp -r "options.txt" "../${github}/run/options.txt"
+cp -r "_run/options.txt" "../${github}/run/options.txt"
+cp -r "_run/eula.txt" "../${github}/run/eula.txt"
+cp -r "_run/server.properties" "../${github}/run/server.properties"
 
 cp -r "libs/" "../${github}/"
 
@@ -71,7 +73,7 @@ sed -i "s/_curseslug_/${curseslug}/g" gradle.properties
 sed -i "s/_curseslug_/${curseslug}/g" .github/README.md
 
 git init
-git checkout -b trunk/1.8
+git checkout -b trunk/1.18
 echo ""
 echo "####"
 echo ""

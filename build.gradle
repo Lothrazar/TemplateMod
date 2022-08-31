@@ -46,7 +46,7 @@ minecraft {
             //arg "-mixin.config=mixins.myplugin.json"
             
             // needed for some addons such as patchouli
-            //  property 'mixin.env.disableRefMap', 'true'
+            property 'mixin.env.disableRefMap', 'true'
             
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
@@ -89,6 +89,9 @@ dependencies {
     implementation fg.deobf("blank:flib-${mc_version}:${flib_version}")
     
     implementation fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+    
+    //https://www.curseforge.com/minecraft/mc-mods/enchantment-descriptions
+	//https://www.curseforge.com/minecraft/mc-mods/just-enough-effect-descriptions-jeed
 	
   //  implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
   //  compileOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}:api")
