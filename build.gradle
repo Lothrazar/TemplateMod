@@ -126,16 +126,12 @@ repositories {
     url = 'https://dogforce-games.com/maven'
   }
   maven {
-    // location of a maven mirror for JEI files, as a fallback
-    name = "ModMaven"
-    url = 'https://modmaven.dev'
-  }
-  maven {
   	name = "curios"
     url = 'https://maven.theillusivec4.top/'
   }
-  maven { url = 'https://maven.blamejared.com' }    
-  maven { url = 'https://www.cursemaven.com'  }
+ // maven { url = 'https://maven.blamejared.com' }    
+ // maven {     url = 'https://modmaven.dev'  }
+ // maven { url = 'https://www.cursemaven.com'  }
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..

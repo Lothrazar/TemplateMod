@@ -2,16 +2,27 @@
 
 if  [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] 
   then
-    echo "Missing argument ($1 $2 $3) Useage: "
+    echo "Missing arguments (${1} ${2} ${3}) Useage: "
 	echo "./copyTemplate.sh <modid> <github> <curseslug>"
-	exit 
+	
+    echo "Retry, or enter prompts:"
+	# missed one. assume all are empty and prompt
+	read -e -p "modid: " modid 
+	read -e -p "github: " github 
+	read -e -p "curseslug: " curseslug 
+else
+	# all 3 were set 
+	modid=$1
+	github=$2
+	curseslug=$3
 fi
 
-modid=$1
-github=$2
-curseslug=$3
-
+echo "========"
 echo "modid = ${modid};  github = ${github}; curse = ${curseslug}"
+echo "========"
+
+
+
 echo "copying files to folder ../${github}"
 
 mkdir "../${github}"
