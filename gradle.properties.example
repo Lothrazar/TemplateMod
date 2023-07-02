@@ -3,17 +3,15 @@
 org.gradle.jvmargs=-Xmx3G
 org.gradle.daemon=false
 
-mod_id=examplemod
-# your properties
-curse_slug=_curseslug_
-curse_id=0
-mod_version=1.0.0-SNAPSHOT
+mod_id=absentbydesign
+curse_id=305840
+mod_version=1.8.0
 
 mc_version=1.20.1
 forge_version=47.0.35
 
-mod_name=examplemod
-mod_group_id=com.lothrazar.examplemod
+mod_name=
+mod_group_id=com.lothrazar.
 
 mod_license=SeeGithub
 mod_authors=Lothrazar
