@@ -69,7 +69,7 @@ sed -i "s/_curseslug_/${curseslug}/g" gradle.properties
 sed -i "s/_curseslug_/${curseslug}/g" .github/README.md
 
 git init
-git checkout -b trunk/1.8
+git checkout -b trunk/1.20
 echo ""
 echo "####"
 echo ""
@@ -79,5 +79,5 @@ echo "then run the following three commands to finish setup:"
 echo "git add -A"
 echo "git commit -am 'initial commit'"
 echo "git remote add o git@github.com:Lothrazar/${github}.git"
-echo "git push o -u trunk/1.18"
+echo "git push o -u trunk/1.20"
 echo "./scripts/setup.sh"
