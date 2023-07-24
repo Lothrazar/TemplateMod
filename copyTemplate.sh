@@ -29,6 +29,8 @@ done
 
 echo "copying src"
 
+cp -r "settings.gradle" "../${github}/settings.gradle"
+
 mkdir "../${github}/run/"
 cp -r "options.txt" "../${github}/run/options.txt"
 
