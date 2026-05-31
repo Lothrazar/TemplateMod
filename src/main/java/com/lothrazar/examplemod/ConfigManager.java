@@ -1,22 +1,18 @@
 package com.lothrazar.examplemod;
 
-import com.lothrazar.library.config.ConfigTemplate;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
 
-public class ConfigManager extends ConfigTemplate {
+public class ConfigManager  {
 
-  private static ForgeConfigSpec CONFIG;
+  static ModConfigSpec CONFIG;
   public static BooleanValue TESTING;
   static {
-    final ForgeConfigSpec.Builder BUILDER = builder();
+    final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
     BUILDER.comment("Mod settings").push(ModMain.MODID);
     TESTING = BUILDER.comment("Testing boolean config").define("doesNothing", true);
     BUILDER.pop(); // one pop for every push
     CONFIG = BUILDER.build();
   }
 
-  public ConfigManager() {
-    CONFIG.setConfig(setup(ModMain.MODID));
-  }
 }
