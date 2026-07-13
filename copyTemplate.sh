@@ -15,7 +15,7 @@ echo "modid = ${modid};  github = ${github}"
 echo "copying files to folder ../${github}"
 
 mkdir "../${github}"
-echo "include '${github}'" >> ../settings.gradle
+printf "\ninclude '%s'" "${github}" >> ../settings.gradle
 
 declare -a arr=(
 	"src" ".github" "gradle" ".gitignore" "build.gradle"
